@@ -1,5 +1,7 @@
 # challenge5
 
+Challenge 5:
+
 In this challenge problem, you will create an automatic rotoscoping system for creating short gif-style animations based on the analysis and processing of short videos.
 
 Rotoscoping is an animation technique that is used to convert live-action movie images into animation.  The technique was developed before 1920 by Max Fleischer, an animator and inventor who saw a need for methods for producing more realistic animations.  The technique has been used in numerous animated films from the 1920s until the present, including several early Disney films, the Lord of the Rings (1978), the Secret of NIMH (1982), Titan AE (2000), Through a Scanner Darkly (2006), and many others.
@@ -14,8 +16,15 @@ Quantization of the luminance or color values to “flatten” the image
 Edge processing: Extraction, morphological expansion, binarization, and compositing with the original image
 We will provide some examples of the approach.
 
+You may refer to the following human motion datasets for testing your method:
+
+UCF Sports Action dataset (http://crcv.ucf.edu/data/UCF_Sports_Action.php (Links to an external site.)Links to an external site.),
+
+Weizmann Action Classification dataset(http://www.wisdom.weizmann.ac.il/~vision/SpaceTimeActions.html (Links to an external site.)Links to an external site.)
+
 As usual, you must take the initiative to explore and evaluate methods for solving this problem.
 
 This challenge problem must be completed in groups of two. 
 
 Please upload one .pdf file with your report, and one .m file or files with your code.
+

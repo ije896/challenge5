@@ -1,24 +1,24 @@
-function rotoscopeVideo(video_fp, out_fp, use_bw)
+function rotoscopeVideo(video_fp, out_fp, sketch)
 if(nargin<2)
     out_fp = '../gifs/out.gif';
-    use_bw = false;
+    sketch = false;
 end
 if(nargin<3)
-    use_bw = false;
+    sketch = false;
 end
 
 v = VideoReader(video_fp);
 
 first = true;
-frame_skip = 1;
-delay = frame_skip/v.FrameRate;
+frame_skip = floor(v.FrameRate/10); % take every frame_skip-th frame 
+delay = 1/10; % for 10fps this should be 1/10
 i = 1;
 while hasFrame(v)
-    if(mod(i, 1)==0) % take half the frames
+    if(mod(i, frame_skip)==0) 
 %         disp(['hit, i: ', num2str(i)])
         frame = readFrame(v);
-        roto = im2uint8(rotoscopeFrame(frame, use_bw));
-        if use_bw
+        roto = im2uint8(rotoscopeFrame(frame, sketch));
+        if sketch
             A = roto;
             if first
                 imwrite(A,out_fp,'gif','LoopCount',Inf, 'DelayTime', delay);

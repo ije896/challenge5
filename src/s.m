@@ -10,7 +10,7 @@
 filename = 'small';
 type = '.mp4';
 vid_fp = strcat('../videos/',filename,type);
-out_fp = strcat('../gifs/',filename,'1.gif');
+out_fp = strcat('../gifs/',filename,'2.gif');
 
 rotoscopeVideo(vid_fp, out_fp, false)
 

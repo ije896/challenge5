@@ -1,3 +1,15 @@
+% This function creates a rotoscoped, 10fps gif. The filepath to the source 
+% video and the filepath for the output gif should be passed into the
+% function
+
+% --Inputs--
+% video_fp: filepath to the source video
+% out_fp: filepath for the gif created by the function
+% sketch: a boolean that determines if the rotoscope gif will have a
+% 'sketched' quality
+% color_correct: a boolean that determines if the rotoscope gif will have
+% any color adjustments made to it
+
 function rotoscopeVideo(video_fp, out_fp, sketch, color_correct)
 if(nargin<2)
     out_fp = '../gifs/out.gif';
@@ -23,7 +35,6 @@ delay = 1/10; % for 10fps this should be 1/10
 i = 1;
 while hasFrame(v)
     if(mod(i, frame_skip)==0) 
-%         disp(['hit, i: ', num2str(i)])
         frame = readFrame(v);
         roto = im2uint8(rotoscopeFrame(frame, sketch, color_correct));
         if sketch
@@ -45,7 +56,6 @@ while hasFrame(v)
         end    
     else
         frame = readFrame(v); % still need to advance the frames
-%         disp('pass')
     end
     i = i + 1;
 end

@@ -1,3 +1,4 @@
+% rotoscope image example
 % % load image
 % im_fp = '../photos/death.jpg';
 % im = imread(im_fp);
@@ -6,6 +7,7 @@
 % imshowpair(im, roto, 'montage')
 
 
+% rotoscope video example
 % load video
 filename = 'small';
 type = '.mp4';

@@ -1,3 +1,15 @@
+% This function returns a rotoscoped version of an individual frame
+% (image), presumably from a video. Called by the rotoscopeVideo function.
+
+% --Inputs--
+% frame: a matlab image (output of imread function)
+% sketch: a boolean that determines if the rotoscope image will have a
+% 'sketched' quality
+% color_correct: a boolean that determines if the rotoscope image will have
+% any color adjustments made to it
+
+% --Outputs--
+% roto: a rotoscoped image
 function roto = rotoscopeFrame(frame, sketch, color_correct)
 if(nargin<2)
     sketch = false;

@@ -1,7 +1,7 @@
-% load image
+% % load image
 % im_fp = '../photos/death.jpg';
 % im = imread(im_fp);
-% roto = rotoscopeFrame(im, true);
+% roto = rotoscopeFrame(im, false);
 % figure
 % imshowpair(im, roto, 'montage')
 
@@ -10,7 +10,7 @@
 filename = 'small';
 type = '.mp4';
 vid_fp = strcat('../videos/',filename,type);
-out_fp = strcat('../gifs/',filename,'2.gif');
+out_fp = strcat('../gifs/',filename,'_cc.gif');
 
-rotoscopeVideo(vid_fp, out_fp, false)
+rotoscopeVideo(vid_fp, out_fp, false, true);
 

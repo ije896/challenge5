@@ -1,10 +1,18 @@
-function rotoscopeVideo(video_fp, out_fp, sketch)
+function rotoscopeVideo(video_fp, out_fp, sketch, color_correct)
 if(nargin<2)
     out_fp = '../gifs/out.gif';
     sketch = false;
+    color_correct = false;
 end
 if(nargin<3)
     sketch = false;
+    color_correct = false;
+end
+if(nargin<4)
+    color_correct = false;
+end
+if sketch
+    color_correct = false;
 end
 
 v = VideoReader(video_fp);
@@ -17,7 +25,7 @@ while hasFrame(v)
     if(mod(i, frame_skip)==0) 
 %         disp(['hit, i: ', num2str(i)])
         frame = readFrame(v);
-        roto = im2uint8(rotoscopeFrame(frame, sketch));
+        roto = im2uint8(rotoscopeFrame(frame, sketch, color_correct));
         if sketch
             A = roto;
             if first
